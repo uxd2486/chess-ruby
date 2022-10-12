@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'require_all'
+require_all 'lib/pieces'
+
 # Keeps track of all the pieces of a
 # single colour.
 class PieceManager
@@ -13,7 +16,12 @@ class PieceManager
   end
 
   def init_pawns(is_white)
-    []
+    start_row = is_white ? 1 : 6
+    pawns = []
+    8.times do |start_col|
+      pawns << Pawn.new([start_row, start_col], is_white)
+    end
+    pawns
   end
 
   def init_rooks(is_white)
