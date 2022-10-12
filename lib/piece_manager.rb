@@ -25,7 +25,9 @@ class PieceManager
   end
 
   def init_rooks(is_white)
-    []
+    start_row = is_white ? 0 : 7
+    [Rook.new([start_row, 0], is_white),
+     Rook.new([start_row, 7], is_white)]
   end
 
   def init_knights(is_white)
