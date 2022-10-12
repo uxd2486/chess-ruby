@@ -18,4 +18,9 @@ class Piece
   def white?
     @is_white
   end
+
+  def to_s
+    colour = @is_white ? 'White' : 'Black'
+    "#{colour} #{self.class} @ [#{@location[0]}, #{@location[1]}]"
+  end
 end
