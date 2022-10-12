@@ -6,6 +6,8 @@ require_all 'lib/pieces'
 # Keeps track of all the pieces of a
 # single colour.
 class PieceManager
+  attr_accessor :pieces
+
   def initialize(is_white)
     @pieces = init_pawns(is_white)
     @pieces += init_rooks(is_white)
@@ -31,18 +33,24 @@ class PieceManager
   end
 
   def init_knights(is_white)
-    []
+    start_row = is_white ? 0 : 7
+    [Knight.new([start_row, 1], is_white),
+     Knight.new([start_row, 6], is_white)]
   end
 
   def init_bishops(is_white)
-    []
+    start_row = is_white ? 0 : 7
+    [Bishop.new([start_row, 2], is_white),
+     Bishop.new([start_row, 5], is_white)]
   end
 
   def init_queen(is_white)
-    []
+    start_row = is_white ? 0 : 7
+    [Queen.new([start_row, 3], is_white)]
   end
 
   def init_king(is_white)
-    []
+    start_row = is_white ? 0 : 7
+    [King.new([start_row, 4], is_white)]
   end
 end
