@@ -4,7 +4,6 @@ require_relative 'piece'
 
 # Represents a Knight on the chess board.
 class Knight < Piece
-
   def initialize(location, is_white)
     super(location, is_white)
     @move_transformations = [[2, 1],
