@@ -15,4 +15,8 @@ class Rook < Piece
   def can_move_vertically?(new_location)
     new_location[1] == @location[1]
   end
+
+  def unicode
+    @is_white ? "\u265C" : "\u2656"
+  end
 end

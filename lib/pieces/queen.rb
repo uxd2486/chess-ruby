@@ -23,4 +23,8 @@ class Queen < Piece
   def can_move_vertically?(new_location)
     new_location[1] == @location[1]
   end
+
+  def unicode
+    @is_white ? "\u265B" : "\u2655"
+  end
 end

@@ -7,4 +7,8 @@ class Bishop < Piece
   def can_move?(new_location)
     (@location[0] - new_location[0]).abs == (@location[1] - new_location[1]).abs
   end
+
+  def unicode
+    @is_white ? "\u265D" : "\u2657"
+  end
 end

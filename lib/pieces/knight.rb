@@ -21,4 +21,8 @@ class Knight < Piece
       @location == [row + new_location[0], col + new_location[1]]
     end
   end
+
+  def unicode
+    @is_white ? "\u265E" : "\u2658"
+  end
 end

@@ -12,6 +12,8 @@ class Piece
   end
 
   def can_move?(new_location); end
+  # returns a unicode representation of the chess piece
+  def unicode; end
 
   def move(new_location)
     @location = new_location
