@@ -8,4 +8,8 @@ class Board
     @white_pieces = PieceManager.new(true)
     @black_pieces = PieceManager.new(false)
   end
+
+  def piece_at(location)
+    @black_pieces.get_piece_at(location) || @white_pieces.get_piece_at(location)
+  end
 end

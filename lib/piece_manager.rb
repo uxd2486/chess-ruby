@@ -17,6 +17,12 @@ class PieceManager
     @pieces += init_king(is_white)
   end
 
+  # This method is only used for displaying
+  # the board.
+  def get_piece_at(location)
+    @pieces.find { |piece| piece.location == location }
+  end
+
   def init_pawns(is_white)
     start_row = is_white ? 1 : 6
     pawns = []

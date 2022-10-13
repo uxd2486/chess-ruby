@@ -4,6 +4,8 @@
 # This is an abstract class and should
 # NOT BE INSTANTIATED.
 class Piece
+  attr_accessor :location
+
   def initialize(location, is_white)
     @location = location
     @is_white = is_white
