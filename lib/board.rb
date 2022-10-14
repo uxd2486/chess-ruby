@@ -18,4 +18,15 @@ class Board
   def print_board
     @display_manager.print_board
   end
+
+  def move_piece(piece_type, location, white)
+    piece_manager = white ? @white_pieces : @black_pieces
+    pieces = piece_manager.get(piece_type)
+    return if pieces.nil?
+
+    piece_to_move = pieces.find { |piece| piece.can_move? location }
+    return if piece_to_move.nil?
+
+    piece_to_move.move(location)
+  end
 end
