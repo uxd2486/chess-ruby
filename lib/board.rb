@@ -31,4 +31,17 @@ class Board
 
     piece_to_move.move(location)
   end
+
+  def capture_piece(captured_piece, piece_type)
+    piece_manager = captured_piece.white? ? @black_pieces : @white_pieces
+    pieces = piece_manager.get(piece_type)
+    return if pieces.nil?
+
+    piece_to_move = pieces.find { |piece| piece.can_move? captured_piece.location }
+    return if piece_to_move.nil?
+
+    piece_to_move.move(captured_piece.location)
+    captured_piece_manager = captured_piece.white? ? @white_pieces : @black_pieces
+    captured_piece_manager.remove_piece(captured_piece)
+  end
 end
