@@ -19,6 +19,8 @@ class Board
     @display_manager.print_board
   end
 
+  # piece_type MUST be a Class from the pieces
+  # directory, not including Piece
   def move_piece(piece_type, location, white)
     piece_manager = white ? @white_pieces : @black_pieces
     pieces = piece_manager.get(piece_type)

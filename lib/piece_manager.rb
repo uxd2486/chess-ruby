@@ -23,47 +23,8 @@ class PieceManager
     @pieces.find { |piece| piece.location == location }
   end
 
-  def get(piece)
-    case piece
-    when 'pawn'
-      find_pawns
-    when 'rook'
-      find_rooks
-    when 'bishop'
-      find_bishops
-    when 'knight'
-      find_knights
-    when 'queen'
-      find_queen
-    when 'king'
-      find_king
-    else
-      puts 'Cannot find required piece'
-    end
-  end
-
-  def find_pawns
-    @pieces.select { |piece| piece.instance_of? Pawn }
-  end
-
-  def find_rooks
-    @pieces.select { |piece| piece.instance_of? Rook }
-  end
-
-  def find_bishops
-    @pieces.select { |piece| piece.instance_of? Bishop }
-  end
-
-  def find_knights
-    @pieces.select { |piece| piece.instance_of? Knight }
-  end
-
-  def find_queen
-    @pieces.select { |piece| piece.instance_of? Queen }
-  end
-
-  def find_king
-    @pieces.select { |piece| piece.instance_of? King }
+  def get(piece_type)
+    @pieces.select { |piece| piece.instance_of? piece_type }
   end
 
   def init_pawns(is_white)
