@@ -27,6 +27,10 @@ class PieceManager
     @pieces.select { |piece| piece.instance_of? piece_type }
   end
 
+  def remove_piece(captured_piece)
+    @pieces.delete(captured_piece)
+  end
+
   def init_pawns(is_white)
     start_row = is_white ? 1 : 6
     pawns = []
